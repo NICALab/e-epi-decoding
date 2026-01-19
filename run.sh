@@ -2,17 +2,12 @@
 set -euo pipefail
 export RUN_BASH_NAME="$(basename "$0" .sh)"
 export CUDA_VISIBLE_DEVICES=1
-# -----------------------------
-# EXPERIMENT: Window Size = 9 (900ms context)
-# -----------------------------
+
 PYTHON=python
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 SCRIPT="${BASE_DIR}/main.py"
 CSV_DIR="${BASE_DIR}/data_csv"
 
-# -----------------------------
-# Fixed args
-# -----------------------------
 n_fft=256
 hop_length=64
 batch_size=64
@@ -37,18 +32,10 @@ use_clipping=False
 spec_aug=True
 mixup=True
 mixup_alpha=0.1
-# -----------------------------
-# Windowed dataset args
-# -----------------------------
+
 use_windowed_dataset=True
-window_size=9       # 9 bins = 900ms context (balanced)
+window_size=9       
 window_stride=1
-
-# -----------------------------
-# Split seed (for seed-based train/val/test split)
-# -----------------------------
-split_seed=${SPLIT_SEED:-}  # Get from environment variable, empty if not set
-
 
 $PYTHON $SCRIPT \
       --csv_dir "$CSV_DIR" \

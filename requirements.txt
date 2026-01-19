@@ -1,0 +1,11 @@
+# Minimal requirements for running the training/evaluation script in this repo.
+# NOTE: Install PyTorch separately (CUDA-specific) from https://pytorch.org/get-started/locally/
+
+numpy>=1.23
+pandas>=2.0
+scikit-learn>=1.2
+matplotlib>=3.7
+seaborn>=0.12
+tqdm>=4.60
+tensorboard>=2.10
+torchlibrosa>=0.1.0
