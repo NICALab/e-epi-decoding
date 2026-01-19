@@ -14,7 +14,7 @@ From the repository root:
   - `main.py`
   - `run.sh`
   - `requirements.txt`
-  - `data_csv/`  *(create this and put your CSVs here)*
+  - `data_csv/`  *(create this directory and place the CSVs here)*
 
 ## Expected data directory structure
 
