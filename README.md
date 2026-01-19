@@ -16,27 +16,22 @@ From the repository root:
   - `requirements.txt`
   - `data_csv/`  *(create this and put your CSVs here)*
 
-## Expected data format
+## Expected data directory structure
 
-Place one or more `.csv` files under `e-epi-decoding/data_csv/`.
-
-- **CSV columns**:
-  - All columns **except the last** are numeric signal features (float-compatible).
-  - The **last column** is the label string for each time bin (one of): `walking`, `climbing`, `resting`, `grooming`.
+Download the CSV files from the data provided by the paper and place them under `e-epi-decoding/data_csv/`.
 
 ## Install required packages
 
-From `e-epi-decoding/`:
-
 ```bash
+git clone https://github.com/NICALab/e-epi-decoding.git
+cd e-epi-decoding
 pip install -r requirements.txt
 ```
 
-## Reproduce results (run training/eval)
-
-From `e-epi-decoding/`:
+## Reproduce results from paper
 
 ```bash
+cd e-epi-decoding
 bash run.sh
 ```
 
