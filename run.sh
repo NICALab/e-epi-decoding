@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 export RUN_BASH_NAME="$(basename "$0" .sh)"
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=0
 
 PYTHON=python
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
