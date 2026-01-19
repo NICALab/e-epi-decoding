@@ -1,6 +1,6 @@
 # e-epi-decoding
 
-This repository will provide the official code, pretrained models, and datasets for the paper:
+This repository will provide the official code for the paper:
 
 "Anti-fibrotic Electronic Epineurium for High-fidelity Chronic Peripheral Nerve Interface in Freely Moving Animals"
 
