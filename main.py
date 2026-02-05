@@ -676,6 +676,7 @@ if __name__ == '__main__':
     if not use_windowed:
         raise ValueError('This script expects --use_windowed_dataset True (as in run.sh).')
 
+    print("Loading dataset...")
     dataset = WindowedNerveCSVDataset(csv_dir=CSV_DIR, window_size=window_size, stride=window_stride, split_seed=SPLIT_SEED)
     train_idx, val_idx, test_idx = split_windowed_dataset(dataset)
 
