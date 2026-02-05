@@ -1,12 +1,12 @@
 # Python used in the reference environment: 3.11.10.
 # PyTorch here uses CUDA 11.8 wheels ("+cu118"). If you want CPU-only, replace the torch/torchvision/torchaudio
 # pins and remove the PyTorch wheel index below.
---index-url https://pypi.org/simple
---extra-index-url https://download.pytorch.org/whl/cu118
+# --index-url https://pypi.org/simple
+# --extra-index-url https://download.pytorch.org/whl/cu118
+# torch==2.4.0+cu118
+# torchaudio==2.4.0+cu118
+# torchvision==0.19.0+cu118
 
-torch==2.4.0+cu118
-torchaudio==2.4.0+cu118
-torchvision==0.19.0+cu118
 torchlibrosa==0.1.0
 
 numpy==1.26.4
