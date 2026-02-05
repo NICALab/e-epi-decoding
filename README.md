@@ -6,7 +6,7 @@ Official code for:
 
 This repository trains and evaluates a deep learning model to decode behavior classes from e-epi neural recordings.
 
-Repo: https://github.com/NICALab/e-epi-decoding.git
+Repository link: https://github.com/NICALab/e-epi-decoding.git
 
 
 ## 1) System specifications used to verify software
