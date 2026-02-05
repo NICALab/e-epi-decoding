@@ -107,7 +107,7 @@ Two files will be saved:
 
 ### Training
 ```text
-Algorithm 1  Training procedure for behavior decoding network
+1. Training procedure for behavior decoding network
 
 Input:
   Dtrain = {(xi, yi)}i=1..N              # labeled segments → class
@@ -128,7 +128,7 @@ Input:
 ```
 ### Inference
 ```text
-Algorithm 2  Inference procedure for unseen trial data
+2.  Inference procedure for unseen trial data
 
 Input:
   X = {xk}k=1..K                          # unseen data
