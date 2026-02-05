@@ -85,19 +85,16 @@ After placing the data in the correct directory, run the following command from 
 ```bash
 bash run.sh
 ```
+Typical run time: **~2 hours** on a single RTX 3090 (24 GB VRAM) using the default `run.sh` settings (batch size 64). CPU-only runs are supported but may take substantially longer.
 
-### 4.2 Expected runtime
-- **~2 hours** on a single RTX 3090 (24 GB VRAM) using the default `run.sh` settings (batch size 64).
-- CPU-only runs are supported but may take substantially longer.
+> Note: The default settings in `run.sh` sets a large `num_epochs`, but training stops via `early_stop_patience` once validation F1 score does not improve.
 
-> Note: The default settings in `run.sh` sets a large `num_epochs`, but training stops via `early_stop_patience` once validation macro-F1 does not improve.
-
-### 4.3 Expected outputs
+### 4.2 Expected outputs
 Outputs are written under a timestamped run directory under:
 - `BASE_DIR/checkpoints/nerve_behavior_decoding/main/`
 
 Two files will be saved:
-1) **Model checkpoint** (best validation macro-F1), e.g.:
+1) **Model checkpoint** (best validation F1 score), e.g.:
    - `.../best_model_f1.pt`
 2) **Test-set confusion matrix (SVG) and quantitative decoding results**, e.g.:
    - `.../best_test_f1.svg`
@@ -109,34 +106,32 @@ Two files will be saved:
 ```text
 1. Training procedure for behavior decoding network
 
-Input:
+Symbols:
   Dtrain = {(xi, yi)}i=1..N              # labeled segments → class
+  θ                                      # trainable model parameters
   fθ(·)                                  # neural network (architecture abstracted)
-  η, B, E                                # learning rate, batch size, max epochs
+  η, B                                   # learning rate, batch size
   ℒ(·,·)                                 # multi-class cross-entropy loss
 
 
 1:  Initialize θ
 2:  Initialize optimizer with learning rate η
-3:  for epoch = 1 to E do
+3:  for each epoch do
 4:      for each mini-batch {(x, y)} of size B from Dtrain do
 5:          z ← fθ(x)                     # logits
 6:          L ← ℒ(z, y)
 7:          θ ← OptimizerStep(θ, ∇θ L)    # backprop + update
 8:      end for
-9: end for
+9:  end for
 ```
 ### Inference
 ```text
 2.  Inference procedure for unseen trial data
 
-Input:
+Symbols:
   X = {xk}k=1..K                          # unseen data
   fθ*(·)                                  # trained network
   π(·)                                    # class-index → label mapping
-
-Output:
-  Ŷ = {ŷk}k=1..K                          # predicted labels
 
 1:  Set fθ* to inference mode
 2:  for k = 1 to K do
@@ -145,7 +140,6 @@ Output:
 5:      ck ← argmax(p)                    # predicted class index
 6:      ŷk ← π(ck)
 7:  end for
-8:  return Ŷ
 ```
 
 ---
