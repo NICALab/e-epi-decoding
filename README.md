@@ -63,6 +63,7 @@ git clone https://github.com/NICALab/e-epi-decoding.git
 cd e-epi-decoding
 pip install -r requirements.txt
 ```
+> Note: While the exact versions are not strictly required, the version for Numpy must be 1.26.4 to reproduce results.
 
 ## 3) Demo data placement
 
