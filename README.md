@@ -1,40 +1,39 @@
 # e-epi-decoding
 
-This repository will provide the official code for the paper:
+Official code for:
 
-"Anti-fibrotic Electronic Epineurium for High-fidelity Chronic Peripheral Nerve Interface in Freely Moving Animals"
+**Anti-fibrotic Electronic Epineurium for High-fidelity Chronic Peripheral Nerve Interface in Freely Moving Animals**
 
-In this work, we demonstrate behavior decoding using signals recorded from our novel electronic epineurium (e-epi) interface.
+This repository trains and evaluates a deep learning model to decode behavior classes from e-epi neural recordings.
 
-## Directory setup
+Repo: https://github.com/NICALab/e-epi-decoding.git
 
-From the repository root:
+---
 
-- `e-epi-decoding/`
-  - `main.py`
-  - `run.sh`
-  - `requirements.txt`
-  - `data_csv/`  *(create this directory and place the CSVs here)*
+## 1) System specifications tested (not hard requirements)
 
-## Expected data directory structure
+**Tested OS**
+- Ubuntu 22.04.5 LTS
 
-Download the CSV files from the data provided by the paper and place them under `e-epi-decoding/data_csv/`.
+**Tested Python**
+- Python 3.11.10
 
-## Install required packages
+**Tested hardware**
+- CPU supported (slower); GPU recommended
+- Tested GPU: NVIDIA RTX 3090 (24 GB VRAM)
+- Tested CPU: Intel(R) Xeon(R) Silver 4214R
+- Tested RAM: 384 GB
 
+**Tested PyTorch**
+- torch 2.4.0+cu118 (CUDA 11.8 build)
+
+---
+
+## 2) Installation guide
+
+Typical install time: **~10 minutes** on a standard workstation.
+
+### 2.1 Create environment
 ```bash
-git clone https://github.com/NICALab/e-epi-decoding.git
-cd e-epi-decoding
-pip install -r requirements.txt
-```
-
-## Reproduce results from paper
-
-```bash
-cd e-epi-decoding
-bash run.sh
-```
-
-This will train the model and write checkpoints + the test confusion matrix figure under:
-
-- `e-epi-decoding/checkpoints/nerve_behavior_decoding/main/main_<timestamp>_stride<...>_window<...>_bash<...>_splitseed<...>/`
+conda create -n epi python=3.11.10 -y
+conda activate epi
