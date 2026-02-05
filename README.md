@@ -43,14 +43,7 @@ conda create -n epi python=3.11.10 -y
 conda activate epi
 ```
 
-### 2.2 Download code repository + dependencies
-```bash
-git clone https://github.com/NICALab/e-epi-decoding.git
-cd e-epi-decoding
-pip install -r requirements.txt
-```
-
-### 2.3 Install PyTorch
+### 2.2 Install PyTorch
 PyTorch is not installed via `requirements.txt` because it depends on computational hardware: CPU vs GPU (CUDA).
 
 **GPU (verified: CUDA 11.8 wheels)**
@@ -64,6 +57,12 @@ pip install torch==2.4.0+cu118 torchvision==0.19.0+cu118 torchaudio==2.4.0+cu118
 pip install torch torchvision torchaudio
 ```
 
+### 2.3 Download code repository + dependencies
+```bash
+git clone https://github.com/NICALab/e-epi-decoding.git
+cd e-epi-decoding
+pip install -r requirements.txt
+```
 
 ## 3) Demo data placement
 
