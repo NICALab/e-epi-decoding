@@ -131,15 +131,13 @@ Symbols:
 Symbols:
   X = {xk}k=1..K                          # unseen data
   fθ*(·)                                  # trained network
-  π(·)                                    # class-index → label mapping
 
 1:  Set fθ* to inference mode
 2:  for k = 1 to K do
 3:      z ← fθ*(xk)                       # logits
 4:      p ← Softmax(z)                    # probabilities
-5:      ck ← argmax(p)                    # predicted class index
-6:      ŷk ← π(ck)
-7:  end for
+5:      ŷk ← argmax(p)                    # predicted class index
+6:  end for
 ```
 
 ---
