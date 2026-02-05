@@ -57,7 +57,7 @@ pip install torch==2.4.0+cu118 torchvision==0.19.0+cu118 torchaudio==2.4.0+cu118
 pip install torch torchvision torchaudio
 ```
 
-### 2.3 Download code repository + dependencies
+### 2.3 Download code repository + Install dependencies
 ```bash
 git clone https://github.com/NICALab/e-epi-decoding.git
 cd e-epi-decoding
