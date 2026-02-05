@@ -103,9 +103,9 @@ Two files will be saved:
    - `.../best_test_f1.svg`
 
 
-## 6) Algorithm pseudocode (paper-style)
+## 6) Pseudocode
 
-### Algorithm 1: Training
+### Training
 ```text
 Algorithm 1  Training procedure for behavior decoding network
 
@@ -126,7 +126,7 @@ Input:
 8:      end for
 9: end for
 ```
-### Algorithm 2: Inference
+### Inference
 ```text
 Algorithm 2  Inference procedure for unseen trial data
 
